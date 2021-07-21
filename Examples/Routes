@@ -1,0 +1,42 @@
+/* Example to set up Routing */
+
+// Stephen
+<div className="ui container">
+  <Router history={history}>
+    <div>
+      <Header />
+      <Switch>
+        <Route path="/" exact component={StreamList} />
+        <Route path="/streams/new" exact component={StreamCreate} />
+        <Route path="/streams/edit/:id" exact component={StreamEdit} />
+        <Route path="/streams/delete/:id" exact component={StreamDelete} />
+        <Route path="/streams/:id" exact component={StreamShow} />
+      </Switch>
+    </div>
+  </Router>
+</div>;
+
+// BRAD MERN
+const Routes = (props) => {
+  return (
+    <section className="container">
+      <Alert />
+      <Switch>
+        <Route exact path="/register" component={Register} />
+        <Route exact path="/login" component={Login} />
+        <Route exact path="/profiles" component={Profiles} />
+        <Route exact path="/profile/:id" component={Profile} />
+        <PrivateRoute exact path="/dashboard" component={Dashboard} />
+        <PrivateRoute exact path="/create-profile" component={ProfileForm} />
+        <PrivateRoute exact path="/edit-profile" component={ProfileForm} />
+        <PrivateRoute exact path="/add-experience" component={AddExperience} />
+        <PrivateRoute exact path="/add-education" component={AddEducation} />
+        <PrivateRoute exact path="/posts" component={Posts} />
+        <PrivateRoute exact path="/posts/:id" component={Post} />
+        <Route component={NotFound} />
+      </Switch>
+    </section>
+  );
+};
+
+export default Routes;

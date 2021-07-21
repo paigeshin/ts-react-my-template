@@ -1,14 +1,29 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import './index.css';
-import App from './App';
-import reportWebVitals from './reportWebVitals';
+import React, { Suspense } from "react";
+import ReactDOM from "react-dom";
+import App from "./Components/App";
+import { Normalize } from "styled-normalize";
+import { Provider } from "react-redux";
+import store from "./Store";
+import { ThemeProvider } from "styled-components";
+import "./i18n";
+import reportWebVitals from "./Support/reportWebVitals";
+import Spinner from "./Components/View/Spinner";
+import GlobalStyle from "./Theme/GlobalStyles";
+import { Theme } from "./Theme/Theme";
 
 ReactDOM.render(
   <React.StrictMode>
-    <App />
+    <Suspense fallback={<Spinner />}>
+      <Provider store={store}>
+        <ThemeProvider theme={Theme}>
+          <Normalize />
+          <GlobalStyle />
+          <App />
+        </ThemeProvider>
+      </Provider>
+    </Suspense>
   </React.StrictMode>,
-  document.getElementById('root')
+  document.getElementById("root")
 );
 
 // If you want to start measuring performance in your app, pass a function

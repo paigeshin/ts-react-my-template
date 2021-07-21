@@ -1,0 +1,7 @@
+//Set default attribute
+const Link = styled.a.attrs((props) => ({
+  target: "_blank",
+}))`
+  color: violet;
+  font-size: 1.5rem;
+`;

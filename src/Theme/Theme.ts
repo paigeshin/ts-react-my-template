@@ -1,18 +1,19 @@
 export const Theme = {
-  colors: {
-    main: "#3747f4",
-    dark: "#263237",
-    light: "#54637a",
-    lighter: "#b0bec5",
-    text: "#fafafa",
-    link: "#444444",
+  header: {
+    "header-padding-mobile": "2.25rem 1.875rem",
+    "header-padding-desktop": "2.25rem 8rem",
   },
-  fontSizes: {
-    large: "3rem",
-    medium: "2rem",
-    p: "1.5rem",
+  logo: {
+    "logo-width-mobile": "130px",
+    "logo-height-mobile": "28px",
+    "logo-width-desktop": "200px",
+    "logo-height-desktop": "43px",
   },
   mediaQueries: {
-    "below-768": `only screen and (max-width: 768px)`,
+    desktop: `(min-width: 40rem)`,
+  },
+  gradient: {
+    "blue-purple-pink": `rgb(148, 148, 250),  rgb(190, 84, 190), rgb(252, 181, 193)`,
+    "pink-purple-blue": `rgb(252, 181, 193), rgb(190, 84, 190), rgb(148, 148, 250)`,
   },
 };
